@@ -1,0 +1,49 @@
+<h3>Contact</h3>
+<div class="card z-depth-3">
+	<div class="card-content">
+		<p>Hollatchoboy!</p>
+		<br/>
+		<div id="map-canvas"></div>
+	</div>
+</div>
+
+    <style>
+      #map-canvas {
+        width: 100%;
+        height: 400px;
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script>
+      function initialize() {
+        var mapCanvas = document.getElementById('map-canvas');
+        var mapOptions = {
+          center: new google.maps.LatLng(30.698156, -98.835388),
+          zoom: 4,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions);
+        var tj = new google.maps.Marker({
+        	position: new google.maps.LatLng(32.514544, -116.993697),
+        	title: "Born and raised!"
+
+        })
+
+        var miami = new google.maps.Marker({
+        	position: new google.maps.LatLng(25.841202, -80.190826),
+        	title: "I call this home"
+
+        })
+
+        var berkeley = new google.maps.Marker({
+        	position: new google.maps.LatLng(37.871704, -122.258953),
+        	title: "Where it's at yee"
+
+        })
+
+        tj.setMap(map);
+        miami.setMap(map);
+        berkeley.setMap(map);
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
